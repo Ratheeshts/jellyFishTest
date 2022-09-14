@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jellyFish.js"></script>
+    <script src="js/validator.js"></script>
+
+    <script>
+        //function for execute user instructions
+        function excuteFishTankInstructions() {
+            var instructions = document.getElementById("instructions").value
+            var ft = new FishTank()
+            var rc = ft.getRemoteController()
+            rc.swimAllFishes(instructions.trim())
+            var result = ft.getAllFishPositions()
+            var finalPositions = result.join("\n")
+            document.getElementById("result").value = finalPositions
+        }
+        function onValidate() {
+            var instructions = document.getElementById("instructions").value
+            var validateResponse = validateAllInstructions(instructions.trim())
+            document.getElementById("runButton").disabled = (!validateResponse.status);
+            if (validateResponse.status == false) {
+                document.getElementById("errorBox").innerHTML =
+                    `<b style='color:red;'>${validateResponse.message}</b>`;
+            } else {
+                document.getElementById("errorBox").innerHTML = ""
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Jelly Fish Tank</h1>
+    <table>
+        <tr><td>Controller Instructions</td>
+            <td></td>
+            <td>Output Positions</td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="instructions" onkeyup="onValidate()" name="instructions" rows="10" cols="50">
+
+        </textarea>
+            </td>
+            <td>
+                <button type="button" id="runButton" onclick="excuteFishTankInstructions()">Execute</button>
+
+            </td>
+            <td>
+                <textarea id="result" name="result" rows="10" cols="50">
+
+        </textarea>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="errorBox"></div>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
