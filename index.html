@@ -16,6 +16,7 @@
             var finalPositions = result.join("\n")
             document.getElementById("result").value = finalPositions
         }
+        //validate user commands on every keyPress
         function onValidate() {
             var instructions = document.getElementById("instructions").value
             var validateResponse = validateAllInstructions(instructions.trim())
