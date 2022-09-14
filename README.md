@@ -1,4 +1,7 @@
 # jellyFishTest
+Jellyfish Challenge
+
+The Jellyfish tank can be modelled by a rectangular grid around which Jellyfish can move according to instructions provided by the Tank IR Remote Control. You are to write a program that determines each sequence of Jellyfish positions and reports the final position of the Jellyfish. A Jellyfish position consists of a grid coordinate (a pair of integers: x-coordinate followed by y-coordinate) and an orientation (N, S, E, W for north, south, east, and west).
 The Input
 The first line of input is the upper-right coordinates of the rectangular tank, the lower-left coordinates are assumed to be 0, 0. The remaining input consists of a sequence of jellyfish positions and instructions (two lines per jellyfish). A position consists of two integers specifying the initial coordinates of the jellyfish and an orientation (N, S, E, W), all separated by whitespace on one line. A jellyfish instruction is a string of the letters “L”, “R”, and “F” on one line.
 
