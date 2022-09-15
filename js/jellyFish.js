@@ -240,7 +240,6 @@ class RemoteController {
    */
     incrementY = (jellyFishObject) => {
         var nextY = jellyFishObject.y + 1
-        console.log(nextY)
         if (this.isOutOfBoundY(nextY)) {
             var smellScent = this.verifyIgnoringArray("y", jellyFishObject)
             return smellScent
@@ -285,12 +284,9 @@ class RemoteController {
     */
     turnRight = (jellyFishObject) => {
         var directionIndex = DIRECTIONS.indexOf(jellyFishObject.direction);
-        console.log("currentIndex", directionIndex)
         var nextDirectionIndex = directionIndex + RIGHT;
-        console.log("next", nextDirectionIndex)
         nextDirectionIndex = (nextDirectionIndex == POSITIVE_OUT_OF_BOUND) ? 0 : nextDirectionIndex;
         jellyFishObject.direction = DIRECTIONS[nextDirectionIndex];
-        console.log(jellyFishObject.direction)
         return true
     }
     /**
@@ -299,7 +295,6 @@ class RemoteController {
     * 
     */
     moveForward = (jellyFishObject) => {
-        console.log(jellyFishObject.direction);
         return this.movements[jellyFishObject.direction](jellyFishObject)
     }
 
@@ -356,31 +351,23 @@ class RemoteController {
     */
     swimAFish = (instruction) => {
         var instructionSet = instruction.split(" ");
-        console.log(instructionSet)
         var x1 = Number(instructionSet[0][0]);
         var y1 = Number(instructionSet[0][1]);
-        console.log(x1, y1)
         var startDirection = instructionSet[0][2];
-        console.log(startDirection)
         var jellyFishObject = new JellyFish(x1, y1, startDirection);
         var instructionArray = instructionSet[1].split("")
-        console.log(instructionArray)
         var runExecution = true
         var index = 0
         while (
             (index < instructionArray.length) &&
             (runExecution == true)) {
             var cmd = instructionArray[index];
-            console.log(cmd)
             runExecution = this.functionsForCommands[cmd](jellyFishObject)
-            console.log(runExecution)
-            console.log(jellyFishObject.getPosition())
 
             index++;
 
         }
         this.fishTank.addFish(jellyFishObject)
-        console.log(jellyFishObject.getPosition())
     }
 
 

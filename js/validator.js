@@ -34,7 +34,7 @@ function validateAllInstructions(instructions)
     }
     else{
         return {
-            "message":"Error in Line Number 1.Please use 2 digits",
+            "message":"Error in Line Number 1.Please use 2 digit number for xy",
             "status":false
         }
     }
@@ -43,9 +43,9 @@ function validateAllInstructions(instructions)
 
 /**
 * Function for validating first instruction
-* @param   {String} instruction for validate
-* @return {Object} 
-* 
+* @param   {String} tankBounds for validate
+* @return {Boolean} 
+* returns true if validate else false
  */
 function validateTankBounds(tankBounds)
 {
@@ -54,7 +54,7 @@ function validateTankBounds(tankBounds)
 
  /**
 * Function for validating first instruction
-* @param   {Array} instruction for validate
+* @param   {Array} allInstructions for validate
 * @return {Object} 
 * 
  */
