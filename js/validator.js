@@ -1,5 +1,5 @@
 /* 
-The following program contains source code for Jelly FishChallenge.
+The following program contains source code for validate input of Jelly FishChallenge.
 Author @ Ratheesh .T.S
 Date : 9/14/2022
 */
@@ -53,7 +53,7 @@ function validateTankBounds(tankBounds)
 }
 
  /**
-* Function for validating first instruction
+* Function for validating all command instructions
 * @param   {Array} allInstructions for validate
 * @return {Object} 
 * 

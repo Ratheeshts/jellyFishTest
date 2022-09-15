@@ -24,7 +24,7 @@ class FishTank {
 
     /**
     * Function for getting remote controller of fish tank
-    * @return   {RemoteController} 
+    * @return   {Object} remoteController object
     * remote controller object to control tank
     * 
     */
@@ -106,7 +106,7 @@ class RemoteController {
 
     /**
    * constructor
-   * @param    {FishTank} fishTank attach fish tank with remote controller
+   * @param    {Object} fishTank attach fish tank with remote controller
    * 
    */
     constructor(fishTank) {
