@@ -22,8 +22,13 @@
             var validateResponse = validateAllInstructions(instructions.trim())
             document.getElementById("runButton").disabled = (!validateResponse.status);
             if (validateResponse.status == false) {
-                document.getElementById("errorBox").innerHTML =
-                    `<b style='color:red;'>${validateResponse.message}</b>`;
+                if (instructions.length > 0) {
+                    document.getElementById("errorBox").innerHTML =
+                        `<b style='color:red;'>${validateResponse.message}</b>`;
+
+                } else {
+                    document.getElementById("errorBox").innerHTML = ""
+                }
             } else {
                 document.getElementById("errorBox").innerHTML = ""
             }
@@ -35,7 +40,8 @@
 <body>
     <h1>Jelly Fish Tank</h1>
     <table>
-        <tr><td>Controller Instructions</td>
+        <tr>
+            <td>Controller Instructions</td>
             <td></td>
             <td>Output Positions</td>
         </tr>
